@@ -7,6 +7,8 @@ Data Science project for DSC80 at UCSD
 
 ## Cleaning and EDA
 
+<iframe src="assets/ingredients_hist.html" width=800 height=600 frameBorder=0></iframe>
+
 ## Assessment of Missingness
 
 ## Hypothesis Testing
