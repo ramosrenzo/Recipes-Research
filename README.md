@@ -121,10 +121,9 @@ because the user who uploaded the recipe might have left it out if the recipe is
 
 ## Hypothesis Testing
 
-```
-Null Hypothesis: The preparation time does not have a significant effect on the average ratings for recipes.
-Alternative Hypothesis: The preparation time significantly affects the average ratings for recipes.
-```
+> Null Hypothesis: The preparation time does not have a significant effect on the average ratings for recipes.
+
+> Alternative Hypothesis: The preparation time significantly affects the average ratings for recipes.
 
 Our test of choice is an independent double-sided t-test because we want to look at both sides of high ratings 
 and low ratings and the time each side takes. We chose our statistical significance to be 0.05 because that is 
