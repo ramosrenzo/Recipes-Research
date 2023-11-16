@@ -110,12 +110,46 @@ average number of minutes, the highest number of steps, and the highest number o
 
 ## Assessment of Missingness
 
-> NMAR 
+### NMAR Analysis
 
-The ‘Description’ column is NMAR because the chance that the value is missing does not depend on other 
-columns, only on the piece of data itself. For example, some of the data from this column could be missing 
-because the user who uploaded the recipe might have left it out if the recipe is fairly simple or basic. 
+The 'Review' column in the merged dataframe is NMAR because the chance that the value is missing does 
+not depend on other columns, only on the piece of data itself. For example, some of the data from this column 
+could be missing because the user who rated the recipe might have left it out if they were too lazy to write 
+a review, or they just didn't feel that the recipe deserved a review along with the rating.
 
+### Missingness Dependency
+
+We are now going to test the dependency of missingness based on the recipe description and comparing that between 
+the recipe cook time in minutes, and the recipe's number of steps.
+
+> Description and Cooking Time
+
+Null Hypothesis: The missingness of description does not depend on minutes
+Alternative Hypothesis: The missingness of description depends on minutes
+Test Statistic: Absolute difference of mean minutes between the two distributions
+
+We ran permutation tests to simulate shuffling the missingness of description 1000 times in order to get 1000 
+results of the mean absolute difference (visualized below).
+
+<iframe src="assets/mins_dist.html" width=800 height=600 frameBorder=0></iframe>
+
+After running the permutation tests, we then calculate the p-value to be 0.25.  Using a significance level of 0.05, 
+we can see that 0.25 > 0.05, which means that we fail to reject the null hypothesis.  Based on the results, the 
+missingness of the description column is MCAR, due to the description column not being correlated with the minutes.
+
+> Description and Number of Steps
+
+Null Hypothesis: The missingness of description does not depend on the number of steps
+Alternative Hypothesis: The missingness of description depends on the number of steps
+Test Statistic: Absolute difference of mean number of steps between the two distributions
+
+Once again, running 1000 permutation tests to get 1000 results of the mean absolute difference (visualized below).
+
+<iframe src="assets/n_steps_dist.html" width=800 height=600 frameBorder=0></iframe>
+
+After these permutation tests, the calculated p-value is 0.031, while still using a significance value of 0.05.  
+Since 0.031 < 0.05, this means that we reject the null hypothesis.  Based on these results, the missingness of the 
+description column is MAR, due to the description column not being correlated with the number of steps in each recipe.
 
 ---
 
