@@ -147,7 +147,7 @@ Once again, running 1000 permutation tests to get 1000 results of the mean absol
 
 <iframe src="assets/n_steps_dist.html" width=800 height=600 frameBorder=0></iframe>
 
-After these permutation tests, the calculated p-value is 0.031, while still using a significance value of 0.05.  
+After these permutation tests, the calculated p-value is 0.031, while still using a significance value of 0.05. 
 Since 0.031 < 0.05, this means that we reject the null hypothesis.  Based on these results, the missingness of the 
 description column is MAR, due to the description column not being correlated with the number of steps in each recipe.
 
