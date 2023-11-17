@@ -132,8 +132,8 @@ the recipe cook time in minutes, and the recipe's number of steps.
 
 > Description and Cooking Time
 
-Null Hypothesis: The missingness of description does not depend on minutes 
-Alternative Hypothesis: The missingness of description depends on minutes 
+Null Hypothesis: The missingness of description does not depend on minutes  
+Alternative Hypothesis: The missingness of description depends on minutes  
 Test Statistic: Absolute difference of mean minutes between the two distributions 
 
 We ran permutation tests to simulate shuffling the missingness of description 1000 times in order to get 1000 
@@ -148,8 +148,8 @@ minutes.
 
 > Description and Number of Steps
 
-Null Hypothesis: The missingness of description does not depend on the number of steps 
-Alternative Hypothesis: The missingness of description depends on the number of steps 
+Null Hypothesis: The missingness of description does not depend on the number of steps  
+Alternative Hypothesis: The missingness of description depends on the number of steps  
 Test Statistic: Absolute difference of mean number of steps between the two distributions 
 
 Once again, running 1000 permutation tests to get 1000 results of the mean absolute difference (visualized below).
