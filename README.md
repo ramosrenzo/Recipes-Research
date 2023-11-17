@@ -1,4 +1,4 @@
-# Research
+# Exploring the Nexus Between Cook Time and Ratings in Recipes
 
 A Data Science project exploring the relationship between a recipe's cooking time and its ratings, for DSC80 at UCSD.
 
@@ -62,7 +62,7 @@ assigned bin 2, etc. Our last bin is from 721 minutes to infinity. We decided to
 > Cleaning Result 
 
 Below is the cleaned dataframe (showing only the columns we are interested in using for our research). We kept 
-id, contributor_id and the submitted columns incase we wanted to explore those columns further. 
+id, contributor_id and the submitted columns incase we wanted to explore those columns further.
 
 |     id | name                                 |   contributor_id | submitted   |   minutes |   average rating |
 |-------:|:-------------------------------------|-----------------:|:------------|----------:|-----------------:|
@@ -76,37 +76,43 @@ id, contributor_id and the submitted columns incase we wanted to explore those c
 
 ### Univariate Analysis
 
-<iframe src="assets/rating_hist.html" width=800 height=600 frameBorder=0></iframe>
-
 > Average Rating Distribution 
 
-In this chart, we see the distribution of the average ratings for each unique recipe. It is left-skewed 
+In the chart below, we see the distribution of the average ratings for each unique recipe. It is left-skewed 
 showing that there are many more recipes with a 5-star rating.
 
-<iframe src="assets/time_hist.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/rating_hist.html" width=800 height=600 frameBorder=0></iframe>
 
 > Recipe Time Distribution 
 
-This distribution shows the number of unique recipes and which bin they are assigned to according to the 
-minutes. There are a lot more recipes within the 0 to 90 minute mark; bins 1, 2, and 3. This shows a 
-left-skew in the data and a significant cut-off in recipes that go over the 90-minute mark. 
+This distribution below shows the number of unique recipes and which bin they are assigned to according to the 
+minutes. There are a lot more recipes within the 0 to 90 minute mark; bins 1, 2, and 3. This shows a left-skew 
+in the data and a significant cut-off in recipes that go over the 90-minute mark. 
+
+<iframe src="assets/time_hist.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Bivariate Analysis
 
-<iframe src="assets/rating_time_box.html" width=800 height=600 frameBorder=0></iframe>
-
 > Average Rating Versus Preparation Time 
 
-In this visual, we see boxplots for each time bin and the average ratings. We see that the bins with the 
+In the visual below, we see boxplots for each time bin and the average ratings. We see that the bins with the 
 highest average rating median are the first 8 bins. We also see that the bins with the lowest medians 
 are bins 10 through 19. 
 
-> Interesting Aggregates 
+<iframe src="assets/rating_time_box.html" width=800 height=600 frameBorder=0></iframe>
+
+### Interesting Aggregates 
 
 Here we have a pivot table with the average ratings and the average minutes, number of steps, and number 
 of ingredients per rating. To condense the information to a legible pivot table, we decided to round the 
-ratings their whole numbers. This chart clearly shows that the average rating of 0 stars has the highest 
-average number of minutes, the highest number of steps, and the highest number of ingredients.
+ratings their nearest whole numbers. This chart clearly shows that the average rating of 0 stars has the 
+highest average number of minutes, the highest number of steps, and the highest number of ingredients.
+
+|               |       0.0 |       1.0 |       2.0 |       3.0 |       4.0 |       5.0 |
+|:--------------|----------:|----------:|----------:|----------:|----------:|----------:|
+| minutes       | 225.776   | 115.954   | 145.74    | 115.706   | 101.079   | 113.631   |
+| n_steps       |  11.554   |  10.6265  |  10.9105  |  10.3363  |   9.95176 |  10.0263  |
+| n_ingredients |   9.44899 |   9.09877 |   9.32674 |   9.17365 |   9.28596 |   9.16872 | 
 
 ---
 
