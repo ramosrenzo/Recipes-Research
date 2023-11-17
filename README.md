@@ -1,21 +1,22 @@
-# Title
+# Research
 
-Data Science project for DSC80 at UCSD
+A Data Science project exploring the relationship between a recipe's cooking time and its ratings, for DSC80 at UCSD.
 
-by Catherine Back, Lorenzo Ramos
+**Authors:** Catherine Back, Lorenzo Ramos 
 
 ---
 
 ## Introduction
 
-In this project, we are exploring the Recipes and Ratings datasets.  By analyzing this dataset,
-we are hoping to find the answer to the question: Do recipes with higher preparation time have higher ratings?
-for recipes?  By finding the answer to this question, we may be able to draw conclusions about why
-a recipe received a low or high rating just based on the preparation time of the recipe.  The Recipes
-dataframe contains 83782 rows, meaning 83782 unique recipes, each given their own unique recipe id.
-The dataframe for ratings and reviews contain 731927 rows, which represent reviews for each (recipe) id.  
+In this project, we are exploring the Recipes and Ratings datasets which are both provided to us from food.com. By analyzing 
+this dataset, we are hoping to find the answer to the question: Do recipes with higher preparation time have higher ratings? 
+for recipes?  By finding the answer to this question, we may be able to draw conclusions about why a recipe received a 
+low or high rating just based on the preparation time of the recipe. 
+
+The Recipes dataframe contains 83782 rows, meaning 83782 unique recipes, each given their own unique recipe id. 
+The dataframe for ratings and reviews contain 731927 rows, which represent reviews for each (recipe) id. 
 We are mainly interested in utilizing the columns: 'minutes' and 'rating'.  The 'minutes' column is found 
-on the Recipes dataset and it uses an integer value to display the prep time for a recipe (in minutes).  
+on the Recipes dataset and it uses an integer value to display the prep time for a recipe (in minutes). 
 The 'rating' column is found on the Ratings dataset, and also uses an integer value to display ratings that 
 has been given to a unique 'recipe_id'
 
@@ -60,7 +61,8 @@ assigned bin 2, etc. Our last bin is from 721 minutes to infinity. We decided to
 
 > Cleaning Result 
 
-Below is the cleaned dataframe (showing only the columns we are interested in using for our research)
+Below is the cleaned dataframe (showing only the columns we are interested in using for our research). We kept 
+id, contributor_id and the submitted columns incase we wanted to explore those columns further. 
 
 |     id | name                                 |   contributor_id | submitted   |   minutes |   average rating |
 |-------:|:-------------------------------------|-----------------:|:------------|----------:|-----------------:|
@@ -124,8 +126,8 @@ the recipe cook time in minutes, and the recipe's number of steps.
 
 > Description and Cooking Time
 
-Null Hypothesis: The missingness of description does not depend on minutes
-Alternative Hypothesis: The missingness of description depends on minutes
+Null Hypothesis: The missingness of description does not depend on minutes 
+Alternative Hypothesis: The missingness of description depends on minutes 
 Test Statistic: Absolute difference of mean minutes between the two distributions
 
 We ran permutation tests to simulate shuffling the missingness of description 1000 times in order to get 1000 
@@ -134,8 +136,9 @@ results of the mean absolute difference (visualized below).
 <iframe src="assets/mins_dist.html" width=800 height=600 frameBorder=0></iframe>
 
 After running the permutation tests, we then calculate the p-value to be 0.25.  Using a significance level of 0.05, 
-we can see that 0.25 > 0.05, which means that we fail to reject the null hypothesis.  Based on the results, the 
-missingness of the description column is MCAR, due to the description column not being correlated with the minutes.
+we can see that 0.25 > 0.05, which means that we fail to reject the null hypothesis that description does not depend 
+on minutes.  Based on the results, the missingness of the description is MCAR, since description is not dependent on 
+minutes.
 
 > Description and Number of Steps
 
@@ -148,8 +151,9 @@ Once again, running 1000 permutation tests to get 1000 results of the mean absol
 <iframe src="assets/n_steps_dist.html" width=800 height=600 frameBorder=0></iframe>
 
 After these permutation tests, the calculated p-value is 0.031, while still using a significance value of 0.05. 
-Since 0.031 < 0.05, this means that we reject the null hypothesis.  Based on these results, the missingness of the 
-description column is MAR, due to the description column not being correlated with the number of steps in each recipe.
+Since 0.031 < 0.05, this means that we reject our null hypothesis that the missingness of description is not 
+dependent on the number of steps.  Based on these results, the missingness of the description is MAR, 
+due to the description being dependent to the number of steps in each recipe.
 
 ---
 
