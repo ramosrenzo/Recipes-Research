@@ -126,8 +126,8 @@ highest average number of minutes, the highest number of steps, and the highest 
 
 ### NMAR Analysis
 
-The 'Review' column in the merged dataframe is NMAR because the chance that the value is missing does 
-not depend on other columns, only on the piece of data itself. For example, some of the data from this column 
+We believe that the 'Review' column in the merged dataframe is NMAR because the chance that the value is missing 
+does not depend on other columns, only on the piece of data itself. For example, some of the data from this column 
 could be missing because the user who rated the recipe might have left it out if they were too lazy to write 
 a review, or they just didn't feel that the recipe deserved a review along with the rating.
 
