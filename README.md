@@ -1,6 +1,6 @@
 # Exploring the Nexus Between Time and Ratings in Recipes
 
-A Data Science project exploring the relationship between a recipe's preparation (prep for short) time and its ratings, 
+A Data Science project exploring the relationship between a recipe's preparation (prep) time and its ratings, 
 for DSC80 at UCSD.
 
 **Authors:** Catherine Back, Lorenzo Ramos 
