@@ -23,7 +23,7 @@ have been given to a unique 'recipe_id'.
 
 Our research question may interest home cooks who constantly contribute their own unique recipes to food.com. After 
 drawing some conclusions surrounding our question, we may be able to provide those home cooks some insight on how 
-they can craft polished recipe that would gain lots of 5 star ratings. This is useful because if a recipe for a certain 
+they can craft recipes that would gain lots of 5 star ratings. This is useful because if a recipe for a certain 
 dish is rated higher, the possibility of it showing up on the first page of a Google/web search is increased. 
 
 ---
@@ -171,17 +171,19 @@ due to the description being dependent to the number of steps in each recipe.
 
 ## Hypothesis Testing
 
-> Null Hypothesis: The preparation time does not have a significant effect on the average ratings for recipes.
+**Null Hypothesis:** The preparation time does not have a significant effect on the average ratings for recipes.
 
-> Alternative Hypothesis: The preparation time significantly affects the average ratings for recipes.
+**Alternative Hypothesis:** The preparation time significantly affects the average ratings for recipes.
 
-Our test of choice is an independent double-sided t-test because we want to look at both sides of high ratings 
-and low ratings and the time each side takes. We chose our statistical significance to be 0.05 because that is 
+Our test of choice is an **independent double-sided t-test** because we want to look at both sides of high ratings 
+and low ratings and the time each side takes. We chose a **statistical significance level of 0.05** because that is 
 standard when conducting these tests. We chose our threshold to be the time bin of 3 because when looking at 
 the distribution of the ordinal time, we see a sharp drop off after 90 minutes. 
 
-The resulting p-value is 6.340444945728686e-33 which is below statistical significance. Since the p-value is 
-below the statistical significance, we reject the null hypothesis. 
+The resulting **p-value is 6.340444945728686e-33** which is below statistical significance. 
+
+**Conclusion:** Since the p-value is below the statistical significance level, we reject the null hypothesis. Meaning
+we believe the prep time does have a significant effect on average ratings for recipes.
 
 This result is reasonable because when people rate recipes they might have higher expectations for recipes that 
 take a longer amount of time. The opposite might apply as well where recipes with shorter preparation time are 
