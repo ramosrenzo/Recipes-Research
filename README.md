@@ -1,6 +1,7 @@
-# Exploring the Nexus Between Cook Time and Ratings in Recipes
+# Exploring the Nexus Between Time and Ratings in Recipes
 
-A Data Science project exploring the relationship between a recipe's cooking time and its ratings, for DSC80 at UCSD.
+A Data Science project exploring the relationship between a recipe's preparation (prep for short) time and its ratings, 
+for DSC80 at UCSD.
 
 **Authors:** Catherine Back, Lorenzo Ramos 
 
@@ -9,16 +10,21 @@ A Data Science project exploring the relationship between a recipe's cooking tim
 ## Introduction
 
 In this project, we are exploring the Recipes and Ratings datasets which are both provided to us from food.com. By analyzing 
-this dataset, we are hoping to find the answer to the question: Do recipes with higher preparation time have higher ratings? 
-for recipes?  By finding the answer to this question, we may be able to draw conclusions about why a recipe received a 
-low or high rating just based on the preparation time of the recipe. 
+these datasets, we are hoping to find the answer to the question: Do recipes with higher prep times have higher ratings? 
+As we delve deep into our analyses, we may be able to figure out why a recipe received a low or high rating just 
+based on the cooking time of the recipe. 
 
 The Recipes dataframe contains 83782 rows, meaning 83782 unique recipes, each given their own unique recipe id. 
 The dataframe for ratings and reviews contain 731927 rows, which represent reviews for each (recipe) id. 
 We are mainly interested in utilizing the columns: 'minutes' and 'rating'.  The 'minutes' column is found 
 on the Recipes dataset and it uses an integer value to display the prep time for a recipe (in minutes). 
 The 'rating' column is found on the Ratings dataset, and also uses an integer value to display ratings that 
-has been given to a unique 'recipe_id'
+have been given to a unique 'recipe_id'. 
+
+Our research question may interest home cooks who constantly contribute their own unique recipes to food.com. After 
+drawing some conclusions surrounding our question, we may be able to provide those home cooks some insight on how 
+they can craft polished recipe that would gain lots of 5 star ratings. This is useful because if a recipe for a certain 
+dish is rated higher, the possibility of it showing up on the first page of a Google/web search is increased. 
 
 ---
 
@@ -130,7 +136,7 @@ a review, or they just didn't feel that the recipe deserved a review along with 
 We are now going to test the dependency of missingness based on the recipe description and comparing that between 
 the recipe cook time in minutes, and the recipe's number of steps.
 
-> Description and Cooking Time
+> Description and Prep Time
 
 Null Hypothesis: The missingness of description does not depend on minutes  
 Alternative Hypothesis: The missingness of description depends on minutes  
